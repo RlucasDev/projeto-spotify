@@ -1,10 +1,158 @@
+/* RESET */
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    border: 0;
-    outline: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
-div{
-    background-color: #182427;
+
+html, body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background: #182427;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+}
+
+header > img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+header h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+header p {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+header button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+header button:not(:has(img)) {
+  border: 1px solid #fff;
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 12px;
+}
+
+header button:has(img) {
+  padding: 0;
+}
+
+header button img {
+  width: 24px;
+  height: 24px;
+}
+
+/* SECTION */
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+section section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+section section img {
+  width: 70px;
+  height: 70px;
+}
+
+section section h3 {
+  font-size: 16px;
+}
+
+section section p {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+section h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* LISTA DE MÚSICAS */
+section ol {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+section ol li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+section ol li::marker {
+  color: #aaa;
+}
+
+section ol li img:first-of-type {
+  width: 70px;
+  height: 70px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+section ol li img:last-child {
+  margin-left: auto;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* FOOTER */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #182427;
+  border-top: 1px solid #182427;
+}
+
+footer nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 0;
+}
+
+footer nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+}
+
+footer nav a img {
+  margin-bottom: 8px;
 }

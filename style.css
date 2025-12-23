@@ -6,15 +6,21 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-html, body {
-  height: 100%;
+body {
+  background-color: #1b343a;
+  color: #fff;
+  font-family: "Roboto", Arial, sans-serif;
+  min-height: 100vh;
+  padding-bottom: 70px;
+  display: flex;
+  justify-content: center;
 }
 
-body {
-  min-height: 100vh;
-  background: #182427;
-  color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+/* CONTAINER GERAL */
+body > div {
+  background:linear-gradient( to bottom, #182427 , #151B1D , #121212 );
+  max-width: 450px;
+  margin: 0 auto;
 }
 
 /* HEADER */
@@ -22,24 +28,33 @@ header {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 16px;
+  padding-top: 5px;
 }
 
-header > img {
-  width: 160px;
-  height: 160px;
+header img:first-child {
+  position: sticky;
+  z-index: 1;
+  width: 390px;
+  height: 321px;
   object-fit: cover;
-  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
 }
 
 header h1 {
-  font-size: 24px;
+  font-size: 48px;
   font-weight: bold;
+  position: relative;
+  z-index: 2;
+  margin-top: -130px;
+  max-width: 140px;
+  padding: 10px;
 }
 
 header p {
   font-size: 14px;
   opacity: 0.7;
+  padding: 15px;
 }
 
 header button {
@@ -49,40 +64,45 @@ header button {
   cursor: pointer;
 }
 
-header button:not(:has(img)) {
+header button:first-of-type {
   border: 1px solid #fff;
-  padding: 4px 10px;
+  padding: 8px 20px;
   border-radius: 16px;
+  margin: 10px;
   font-size: 12px;
+  width: fit-content;
+  bottom: 10px;
 }
 
-header button:has(img) {
-  padding: 0;
+header button:last-of-type img {
+  width: 56px;
+  height: 56px;
+  position: relative;
+  right: -320px;
+  bottom: 70px;
 }
 
-header button img {
-  width: 24px;
-  height: 24px;
-}
-
-/* SECTION */
+/* SECTION GERAL */
 section {
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 16px;
+  gap: 18px;
 }
 
+/* LIKED SONGS */
 section section {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  align-items: flex-start;
+  gap: 2px;
 }
 
 section section img {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50% 50%;
 }
+
 
 section section h3 {
   font-size: 16px;
@@ -93,39 +113,52 @@ section section p {
   opacity: 0.7;
 }
 
+/* POPULARES */
 section h2 {
   font-size: 18px;
   font-weight: bold;
+  text-transform: capitalize;
 }
 
-/* LISTA DE MÚSICAS */
+/* LISTA */
 section ol {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 section ol li {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
   gap: 12px;
+  align-items: center;
+  font-size: 14px;
 }
 
 section ol li::marker {
   color: #aaa;
 }
 
-section ol li img:first-of-type {
-  width: 70px;
-  height: 70px;
+section ol li img {
+  width: 40px;
+  height: 40px;
   border-radius: 4px;
   flex-shrink: 0;
 }
 
-section ol li img:last-child {
-  margin-left: auto;
-  cursor: pointer;
-  flex-shrink: 0;
+section ol li p {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+section ol li span {
+  position: relative;
+  right: 30px;
+}
+
+.foto2 {
+  position: relative;
+  left: 100px;
 }
 
 /* FOOTER */
@@ -133,26 +166,30 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background: #182427;
-  border-top: 1px solid #182427;
+  max-width: 390px;
+   background:linear-gradient( to bottom, #151B1D ,#121212 ,#182427  );
 }
 
 footer nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  padding: 8px 0;
+  height: 50px;
+  padding: 40px 16px;
 }
 
 footer nav a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 4px;
   text-decoration: none;
   color: #fff;
-  font-size: 14px;
+  font-size: 12px;
+  padding: 15px;
 }
 
 footer nav a img {
-  margin-bottom: 8px;
+  width: 22px;
+  height: 22px;
 }
